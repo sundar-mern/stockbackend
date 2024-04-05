@@ -5,10 +5,18 @@ const productController = require('../controllers/productController');
 const multer  = require('multer');
 var picname;
 
+const fs = require('fs');
+
+// Create the uploads directory if it doesn't exist
+const uploadsDir = '/opt/render/project/uploads';
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir);
+}
+
 let mystorage = multer.diskStorage({
     destination: (req, file, cb) => 
     {
-      cb(null, "/opt/render/project/uploads");
+      cb(null, uploadsDir);
     },
     filename: (req, file, cb) => 
     {
