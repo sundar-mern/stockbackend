@@ -8,11 +8,11 @@ var picname;
 let mystorage = multer.diskStorage({
     destination: (req, file, cb) => 
     {
-      cb(null, "../public/uploads");//we will have to create folder ourselves
+      cb(null, "uploads");
     },
     filename: (req, file, cb) => 
     {
-      picname = Date.now() + file.originalname;//milliseconds will be added with original filename and name will be stored in picname variable
+      picname = Date.now() + file.originalname;
       cb(null, picname);
     }
   });
