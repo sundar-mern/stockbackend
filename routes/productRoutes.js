@@ -8,7 +8,7 @@ var picname;
 let mystorage = multer.diskStorage({
     destination: (req, file, cb) => 
     {
-      cb(null, "uploads");
+      cb(null, "/opt/render/project/uploads");
     },
     filename: (req, file, cb) => 
     {
