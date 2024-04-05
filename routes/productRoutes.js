@@ -8,8 +8,9 @@ var picname;
 const fs = require('fs');
 
 // Create the uploads directory if it doesn't exist
-const uploadsDir = '/opt/render/project/uploads';
-if (!fs.existsSync(uploadsDir)) {
+const uploadsDir = 'uploads';
+if (!fs.existsSync(uploadsDir)) 
+{
     fs.mkdirSync(uploadsDir);
 }
 
